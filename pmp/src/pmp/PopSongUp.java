@@ -19,7 +19,7 @@ public class PopSongUp {
 	private TuneCommand  a = new TuneCommand();
 	
 
-	PopSongUp(){
+	PopSongUp(SongEventHandler derp){
 		VBox songL= new VBox();
 		Scene scene = new Scene(songL, 250, 250);
 		this.stage=new Stage();
@@ -76,7 +76,7 @@ public class PopSongUp {
 		S5.setGraphic(songFi);
 	
 		// set them button handlers
-		S1.setOnAction(new SongEventHandler(a));
+		S1.setOnAction(derp);
 		
 		// adding all them kids
 		songL.getChildren().addAll(S1,S2,S3,S4,S5);

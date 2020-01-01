@@ -33,7 +33,7 @@ public TuneCommand(String fileName, String songName, String artist, String album
 
 public MediaPlayer createPlayer(String fileName) {
 	
-	File file = new File("assets"+File.separator+fileName);
+	File file = new File("pmp" + File.separator+ "assets"+File.separator+fileName);
 	Media med = new Media(file.toURI().toString());
 	MediaPlayer s = new MediaPlayer(med);
 	s.setVolume(0.1);//default volume 
