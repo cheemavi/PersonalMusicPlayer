@@ -36,7 +36,7 @@ public class musicApplication extends Application{
 		//setting up top and bottom bars
 		topBar = new TopPart1();
 		topBar.setPadding(new Insets(5,0,0,5));
-		bottomBar = new Bottom();
+		bottomBar = new Bottom(songOne);
 		
 		
 		// model to view attaching 
