@@ -11,6 +11,8 @@ public class PopUpHandler implements EventHandler<ActionEvent>{
 	 *
 	 */
 	private PopSongUp pu;
+	
+	
 
 	public PopUpHandler(PopSongUp pu) {
 		this.pu = pu;
@@ -26,6 +28,7 @@ public class PopUpHandler implements EventHandler<ActionEvent>{
 	 */
 	public void handle(ActionEvent arg0) {
 		pu.show();
+		
 	}
 
 }

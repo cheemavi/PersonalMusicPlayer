@@ -12,16 +12,17 @@ public class TuneCommand extends Observable{
  MediaPlayer m;
  String songName;
  String Artist;
- String Album;
+
  
  public TuneCommand() {
 		
-		this.fileName = "5.mp3";
+		this.fileName = "NoSound.mp3";
 		this.m = this.createPlayer(fileName);
-		this.songName = "5 SECOND INTRO";
+		this.songName = "NO SOUND";
 		Artist = "N/A";
-		Album = "N/A";
+		
 	}
+ 
 public TuneCommand(String fileName, String songName, String artist, String album) {
 	
 	this.fileName = fileName;
@@ -43,21 +44,30 @@ public MediaPlayer createPlayer(String fileName) {
 public MediaPlayer getM() {
 	return m;
 }
+public double getV() {
+	return this.m.getVolume();
+}
+public void setV(double num) {
+	this.m.setVolume(num);
+}
+
 public void setM(MediaPlayer m) {
 	this.m=m;
-	//this.notifyObservers();
+	this.notifyObservers();
 }
 public void setfileName(String s) {
 	this.fileName= s+".mp3";
+	this.notifyObservers();
+	
 	
 }
 public String getfileName() {
 	return this.fileName;
 	
+	
 }
 public void setSongName(String s) {
 	this.songName=s;
-	//this.notifyAll();
 	this.notifyObservers();
 	
 }

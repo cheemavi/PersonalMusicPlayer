@@ -10,15 +10,15 @@ import javafx.scene.layout.VBox;
 public class Top extends VBox implements Observer {
 	TopPart1 song;
 	TopPart2 artist;
-	String poo;
-	//TopPart3 album;
+	
 	Top(){
 		this.song = new TopPart1();
 		this.artist= new TopPart2();
-		//this.album= new TopPart3();
+	    
+		// add to pane
 		this.getChildren().add(this.song);
 		this.getChildren().add(this.artist);
-		//this.getChildren().add(this.album);
+
 		
 			
 	}
@@ -32,7 +32,7 @@ public class Top extends VBox implements Observer {
 		 this.artist.setT(mark.getArtist());
 		 this.song.setT(mark.getSongName());
 		 
-		 System.out.println("wa");
+		 
 		
 	}
 

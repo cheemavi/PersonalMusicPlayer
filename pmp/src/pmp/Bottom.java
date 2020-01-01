@@ -24,12 +24,12 @@ public class Bottom  extends HBox {
 	Button volDec;
 	Button viewTunes;
 	Button idk;
-	Top a= new Top();
+	SongEventHandler songE;
 	
 	//constructor
-	public Bottom(SongEventHandler derp) {
+	public Bottom() {
 		
-	
+		SongEventHandler songE = SongEventHandler.getInstance();
 		
 		//initializing all buttons
 		
@@ -44,15 +44,15 @@ public class Bottom  extends HBox {
 		Button idk = new Button();
 		
 		//Set up them handlers 
-		
-		playM.setOnAction(new playMusicHandler(derp.getTune().getM()));
-		pauseM.setOnAction(new pauseMusicHandler(derp.getTune().getM()));
-		stopM.setOnAction(new stopMusicHandler(derp.getTune().getM()));
-		volInc.setOnAction(new volIncreaseHandler(derp.getTune().getM()));
-		volDec.setOnAction(new volDecHandler(derp.getTune().getM()));
-		mute.setOnAction(new muteHandler(derp.getTune().getM()));
-		//looping.setOnAction(new loopMHandler(derp.getTune().getM()));
-		viewTunes.setOnAction(new PopUpHandler(new PopSongUp(derp)));
+		 // its getting there
+		playM.setOnAction(new playMusicHandler());
+		pauseM.setOnAction(new pauseMusicHandler());
+		stopM.setOnAction(new stopMusicHandler());
+		volInc.setOnAction(new volIncreaseHandler());
+		volDec.setOnAction(new volDecHandler());
+		mute.setOnAction(new muteHandler());
+		looping.setOnAction(new loopMHandler());
+		viewTunes.setOnAction(new PopUpHandler(new PopSongUp()));
 		
 		//spacing of Buttons
 		
@@ -68,15 +68,15 @@ public class Bottom  extends HBox {
 		
 		// Create all them images
 		
-		Image loopM =  new Image(musicApplication.class.getResourceAsStream("loopMusic.png"));
-		Image songs =  new Image(musicApplication.class.getResourceAsStream("SONGLIST.png"));
-		Image muteP =  new Image(musicApplication.class.getResourceAsStream("mute.png"));
-		Image pauseP =  new Image(musicApplication.class.getResourceAsStream("pauseM.png"));
-		Image PL =  new Image(musicApplication.class.getResourceAsStream("PLACEHOLDER.png"));
-		Image playP =  new Image(musicApplication.class.getResourceAsStream("playM.png"));
-		Image stopP =  new Image(musicApplication.class.getResourceAsStream("stopMusic.png"));
-		Image volD =  new Image(musicApplication.class.getResourceAsStream("vd.png"));
-		Image volI =  new Image(musicApplication.class.getResourceAsStream("volincrease.png"));
+		Image loopM = new Image((new File("assets" + File.separator + "loopMusic.png")).toURI().toString());
+		Image songs =  new Image((new File("assets" + File.separator + "SONGLIST.png")).toURI().toString());
+		Image muteP =  new Image((new File("assets" + File.separator + "mute.png")).toURI().toString());
+		Image pauseP =  new Image((new File("assets" + File.separator + "pauseM.png")).toURI().toString());
+		Image PL =  new Image((new File("assets" + File.separator + "PLACEHOLDER.png")).toURI().toString());
+		Image playP =  new Image((new File("assets" + File.separator + "playM.png")).toURI().toString());
+		Image stopP =  new Image((new File("assets" + File.separator + "stopMusic.png")).toURI().toString());
+		Image volD =  new Image((new File("assets" + File.separator + "vd.png")).toURI().toString());
+		Image volI =  new Image((new File("assets" + File.separator + "volincrease.png")).toURI().toString());
 		
 		// Create them imageViews
 		

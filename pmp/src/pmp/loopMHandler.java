@@ -1,6 +1,6 @@
 package pmp;
 
-import java.nio.channels.NetworkChannel;
+
 
 
 import javafx.event.ActionEvent;
@@ -10,26 +10,26 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 public class loopMHandler implements EventHandler<ActionEvent> {
-	MediaPlayer musicPlayer;
-	boolean isLoop;
-	public loopMHandler(MediaPlayer m) {
-		this.musicPlayer=m;
-		isLoop= false;
-	}
+	SongEventHandler sE;
+	boolean isLoop=false;
+	
+	
 
 	@Override
 	public void handle(ActionEvent arg0) {
+		SongEventHandler sE= SongEventHandler.getInstance();
+		MediaPlayer curr = sE.getTune().getM();
 		if(!this.isLoop) {
-			Duration n = this.musicPlayer.getCurrentTime();
-			this.musicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+			Duration n = curr.getCurrentTime();
+			curr.setCycleCount(MediaPlayer.INDEFINITE);
 			this.isLoop=true;
 		}
 		else {
-			this.musicPlayer.pause();
+			curr.pause();
 			this.isLoop=false;
 			
-			this.musicPlayer.setCycleCount(1);
-			this.musicPlayer.play();
+			curr.setCycleCount(1);
+			curr.play();
 			
 			
 		}

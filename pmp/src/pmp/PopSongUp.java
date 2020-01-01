@@ -1,5 +1,7 @@
 package pmp;
 
+import java.io.File;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -16,10 +18,13 @@ public class PopSongUp {
 	private Button S3;
 	private Button S4;
 	private Button S5;
-	private TuneCommand  a = new TuneCommand();
+	private SongEventHandler derp;
+	
+	
 	
 
-	PopSongUp(SongEventHandler derp){
+	PopSongUp(){
+		SongEventHandler derp = SongEventHandler.getInstance();
 		VBox songL= new VBox();
 		Scene scene = new Scene(songL, 250, 250);
 		this.stage=new Stage();
@@ -38,11 +43,11 @@ public class PopSongUp {
 		S5.setMinSize(230, 50);
 		
 		// Making them images
-		Image song1 =  new Image(musicApplication.class.getResourceAsStream("song1.png"));
-		Image song2 =  new Image(musicApplication.class.getResourceAsStream("SONG2.png"));
-		Image song3 =  new Image(musicApplication.class.getResourceAsStream("SONG3.png"));
-		Image song4 =  new Image(musicApplication.class.getResourceAsStream("SONG4.png"));
-		Image song5 =  new Image(musicApplication.class.getResourceAsStream("SONG5.png"));
+		Image song1 =   new Image((new File("assets" + File.separator + "song1.png")).toURI().toString());
+		Image song2 =   new Image((new File("assets" + File.separator + "SONG2.png")).toURI().toString());
+		Image song3 =   new Image((new File("assets" + File.separator + "SONG3.png")).toURI().toString());
+		Image song4 =  new Image((new File("assets" + File.separator + "SONG4.png")).toURI().toString());
+		Image song5 =   new Image((new File("assets" + File.separator + "SONG5.png")).toURI().toString());
 		
 		// create the image views 
 		ImageView songO=new ImageView(song1);
@@ -53,19 +58,19 @@ public class PopSongUp {
 		
 		// image view sizing 
 		songO.setFitHeight(50);
-		songO.setFitWidth(230);
+		songO.setFitWidth(235);
 		
 		songT.setFitHeight(50);
-		songT.setFitWidth(230);
+		songT.setFitWidth(235);
 		
 		songTh.setFitHeight(50);
-		songTh.setFitWidth(230);
+		songTh.setFitWidth(235);
 		
 		songF.setFitHeight(50);
-		songF.setFitWidth(230);
+		songF.setFitWidth(235);
 		
 		songFi.setFitHeight(50);
-		songFi.setFitWidth(230);
+		songFi.setFitWidth(235);
 		
 		
 		// setting graphics for buttons 
@@ -81,16 +86,19 @@ public class PopSongUp {
 		S3.setOnAction(derp);
 		S4.setOnAction(derp);
 		S5.setOnAction(derp);
+
 		
-		
-		
-		
+		S1.setStyle("-fx-background-color:#ffc2c2 ");
+		S2.setStyle("-fx-background-color: #ffc2c2 ");
+		S3.setStyle("-fx-background-color: #ffc2c2 ");
+		S4.setStyle("-fx-background-color: #ffc2c2 ");
+		S5.setStyle("-fx-background-color: #ffc2c2 ");
 		// adding all them kids
 		songL.getChildren().addAll(S1,S2,S3,S4,S5);
 		
 		stage.setScene(scene);
 		stage.setTitle("Song List");
-		Image p =  new Image(musicApplication.class.getResourceAsStream("alterschemelogo.png"));
+		Image p = new Image((new File("assets" + File.separator + "alterschemelogo.png")).toURI().toString());
 		stage.getIcons().add(p);
 		
 
@@ -100,9 +108,9 @@ public class PopSongUp {
 	public void show() {
 		stage.show();
 	}
-	public void hide() {
-		stage.hide();
-		
-		
+	public void close() {
+		stage.close();
+	
 	}
+	
 }

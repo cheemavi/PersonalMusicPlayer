@@ -5,14 +5,13 @@ import javafx.event.EventHandler;
 import javafx.scene.media.MediaPlayer;
 
 public class stopMusicHandler implements EventHandler<ActionEvent> {
-	MediaPlayer musicPlayer;
-	public stopMusicHandler(MediaPlayer m) {
-		this.musicPlayer=m;
-	}
+	SongEventHandler sE;
+	
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		this.musicPlayer.stop();
+		SongEventHandler sE= SongEventHandler.getInstance();
+		sE.getTune().getM().stop();
 
 	}
 

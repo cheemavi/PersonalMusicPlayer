@@ -24,7 +24,8 @@ public class musicApplication extends Application{
 		
 	
 		//controller to model hook up  to alter song 
-		SongEventHandler songOne =new SongEventHandler(dF);
+		SongEventHandler song = SongEventHandler.getInstance();
+		song.setTune(dF);
 		
 		
 		//creating main layout
@@ -36,16 +37,15 @@ public class musicApplication extends Application{
 		//setting up top and bottom bars
 		topBar = new Top();
 		topBar.setPadding(new Insets(5,0,0,5));
-		bottomBar = new Bottom(songOne);
+		bottomBar = new Bottom();
 		
 		
 		// model to view attaching 
 		dF.attach(topBar);
-		//dF.attach(bottomBar);
+		
 		
 		
 		// adding bars to the main layout
-		
 		mp.setTop(topBar);
 		mp.setBottom(bottomBar);
 		
@@ -55,7 +55,7 @@ public class musicApplication extends Application{
 	
 		//Image c = new Image((new File("assets" + File.separator + "alterschemelogo.png")).toURI().toString());
 		//^get back to image c 
-		Image a =  new Image(musicApplication.class.getResourceAsStream("alterschemelogo.png"));
+		Image a = new Image((new File("assets" + File.separator + "alterschemelogo.png")).toURI().toString());
 		ImageView v= new ImageView(a);
 		v.setFitHeight(250);
 		v.setFitWidth(250);
