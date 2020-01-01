@@ -24,18 +24,18 @@ public class PopSongUp {
 		Scene scene = new Scene(songL, 250, 250);
 		this.stage=new Stage();
 		this.stage.setResizable(false);
-		Button S1= new Button();
-		Button S2= new Button();
-		Button S3= new Button();
-		Button S4= new Button();
-		Button S5= new Button();
+		Button S1= new Button("1");
+		Button S2= new Button("2");
+		Button S3= new Button("3");
+		Button S4= new Button("4");
+		Button S5= new Button("5");
 		
 		// set them widths 
-		S1.setMinSize(250, 50);
-		S2.setMinSize(250, 50);
-		S3.setMinSize(250, 50);
-		S4.setMinSize(250, 50);
-		S5.setMinSize(250, 50);
+		S1.setMinSize(230, 50);
+		S2.setMinSize(230, 50);
+		S3.setMinSize(230, 50);
+		S4.setMinSize(230, 50);
+		S5.setMinSize(230, 50);
 		
 		// Making them images
 		Image song1 =  new Image(musicApplication.class.getResourceAsStream("song1.png"));
@@ -53,19 +53,19 @@ public class PopSongUp {
 		
 		// image view sizing 
 		songO.setFitHeight(50);
-		songO.setFitWidth(250);
+		songO.setFitWidth(230);
 		
 		songT.setFitHeight(50);
-		songT.setFitWidth(250);
+		songT.setFitWidth(230);
 		
 		songTh.setFitHeight(50);
-		songTh.setFitWidth(250);
+		songTh.setFitWidth(230);
 		
 		songF.setFitHeight(50);
-		songF.setFitWidth(250);
+		songF.setFitWidth(230);
 		
 		songFi.setFitHeight(50);
-		songFi.setFitWidth(250);
+		songFi.setFitWidth(230);
 		
 		
 		// setting graphics for buttons 
@@ -77,6 +77,13 @@ public class PopSongUp {
 	
 		// set them button handlers
 		S1.setOnAction(derp);
+		S2.setOnAction(derp);
+		S3.setOnAction(derp);
+		S4.setOnAction(derp);
+		S5.setOnAction(derp);
+		
+		
+		
 		
 		// adding all them kids
 		songL.getChildren().addAll(S1,S2,S3,S4,S5);

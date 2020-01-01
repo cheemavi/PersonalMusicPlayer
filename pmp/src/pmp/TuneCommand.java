@@ -28,12 +28,12 @@ public TuneCommand(String fileName, String songName, String artist, String album
 	this.m = this.createPlayer(fileName);
 	this.songName = songName;
 	Artist = artist;
-	Album = album;
+	
 }
 
 public MediaPlayer createPlayer(String fileName) {
 	
-	File file = new File("pmp" + File.separator+ "assets"+File.separator+fileName);
+	File file = new File("assets"+File.separator+fileName);
 	Media med = new Media(file.toURI().toString());
 	MediaPlayer s = new MediaPlayer(med);
 	s.setVolume(0.1);//default volume 
@@ -58,6 +58,7 @@ public String getfileName() {
 public void setSongName(String s) {
 	this.songName=s;
 	//this.notifyAll();
+	this.notifyObservers();
 	
 }
 public String getSongName() {
@@ -66,11 +67,13 @@ public String getSongName() {
 }
 public void setArtist(String s) {
 	this.Artist=s;
-	notifyObservers();
+	//System.out.println("I am being called");
+	this.notifyObservers();
 	
 	
 	
 }
+
 public String getArtist() {
 	return this.Artist;
 	

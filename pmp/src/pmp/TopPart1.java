@@ -10,7 +10,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-public class TopPart1 extends HBox implements Observer{
+public class TopPart1 extends HBox{
 	
 	Text Song;
 	
@@ -36,12 +36,6 @@ public class TopPart1 extends HBox implements Observer{
 		 Song.setText(s);
 	
 	}
-	@Override
-	public void update(Observable o) {
-		System.out.println(1111);
-		TuneCommand mark = (TuneCommand)o;
-		this.Song.setText(mark.getArtist());
-		
-	}
+	
 	
 }

@@ -24,7 +24,8 @@ public class Bottom  extends HBox {
 	Button volDec;
 	Button viewTunes;
 	Button idk;
-	TuneCommand EveryNight= new TuneCommand();
+	Top a= new Top();
+	
 	//constructor
 	public Bottom(SongEventHandler derp) {
 		
@@ -44,13 +45,13 @@ public class Bottom  extends HBox {
 		
 		//Set up them handlers 
 		
-		playM.setOnAction(new playMusicHandler(EveryNight.getM()));
-		pauseM.setOnAction(new pauseMusicHandler(EveryNight.getM()));
-		stopM.setOnAction(new stopMusicHandler(EveryNight.getM()));
-		volInc.setOnAction(new volIncreaseHandler(EveryNight.getM()));
-		volDec.setOnAction(new volDecHandler(EveryNight.getM()));
-		mute.setOnAction(new muteHandler(EveryNight.getM()));
-		//looping.setOnAction(new loopMHandler(EveryNight.getM()));
+		playM.setOnAction(new playMusicHandler(derp.getTune().getM()));
+		pauseM.setOnAction(new pauseMusicHandler(derp.getTune().getM()));
+		stopM.setOnAction(new stopMusicHandler(derp.getTune().getM()));
+		volInc.setOnAction(new volIncreaseHandler(derp.getTune().getM()));
+		volDec.setOnAction(new volDecHandler(derp.getTune().getM()));
+		mute.setOnAction(new muteHandler(derp.getTune().getM()));
+		//looping.setOnAction(new loopMHandler(derp.getTune().getM()));
 		viewTunes.setOnAction(new PopUpHandler(new PopSongUp(derp)));
 		
 		//spacing of Buttons

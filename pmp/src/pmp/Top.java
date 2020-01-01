@@ -27,9 +27,11 @@ public class Top extends VBox implements Observer {
 	}
 	@Override
 	public void update(Observable o) {
-		// TODO Auto-generated method stuff
+		// update them song labels
 		 TuneCommand mark = (TuneCommand)o;
-		 this.poo= mark.getArtist();
+		 this.artist.setT(mark.getArtist());
+		 this.song.setT(mark.getSongName());
+		 
 		 System.out.println("wa");
 		
 	}
