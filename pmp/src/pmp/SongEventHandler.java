@@ -84,7 +84,7 @@ public class SongEventHandler implements EventHandler<ActionEvent> {
 		else if (source.getText()=="7") {
 			song.setArtist("Michael Bublé");
 			song.setSongName("Feelin' Good");
-			song.setfileName("FEELINGgood");
+			song.setfileName("moo");
 			
 		}
 		

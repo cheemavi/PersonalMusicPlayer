@@ -51,7 +51,7 @@ public class Bottom  extends HBox {
 		volInc.setOnAction(new volIncreaseHandler());
 		volDec.setOnAction(new volDecHandler());
 		mute.setOnAction(new muteHandler());
-		//looping.setOnAction(new loopMHandler());
+		looping.setOnAction(new loopMHandler());
 		viewTunes.setOnAction(new PopUpHandler(new PopSongUp()));
 		
 		//spacing of Buttons
