@@ -73,6 +73,41 @@ public class SongEventHandler implements EventHandler<ActionEvent> {
 			
 			
 		}
+		else if (source.getText()=="6") {
+			song.setArtist("DREAMCATCHER");
+			song.setSongName("You & I");
+			song.setfileName("UANDI");
+			
+			
+		}
+		
+		else if (source.getText()=="7") {
+			song.setArtist("Michael Bublé");
+			song.setSongName("Feelin' Good");
+			song.setfileName("FEELINGgood");
+			
+		}
+		
+		else if (source.getText()=="8") {
+			song.setArtist("Katy Perry");
+			song.setSongName("Wide Awake");
+			song.setfileName("wideAwake");
+			
+		}
+		
+		else if (source.getText()=="9") {
+			song.setArtist("Lindsey Stirling ft Lzzy Hale");
+			song.setSongName("Shatter Me");
+			song.setfileName("shatterMe");
+			
+		}
+		
+		else if (source.getText()=="10") {
+			song.setArtist("EXID");
+			song.setSongName("Bad Girl For You");
+			song.setfileName("BADGIRLFORU");
+			
+		}
 		song.setM(song.createPlayer(song.getfileName()));
 		
 		

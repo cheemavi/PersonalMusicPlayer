@@ -21,6 +21,7 @@ public class loopMHandler implements EventHandler<ActionEvent> {
 		MediaPlayer curr = sE.getTune().getM();
 		if(!this.isLoop) {
 			Duration n = curr.getCurrentTime();
+			System.out.println(curr.getCycleCount()+"this");
 			curr.setCycleCount(MediaPlayer.INDEFINITE);
 			this.isLoop=true;
 		}
