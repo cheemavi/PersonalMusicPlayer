@@ -16,6 +16,7 @@ public class SongEventHandler implements EventHandler<ActionEvent> {
 	
 	
 	
+	
 
 	private SongEventHandler(TuneCommand a) {
 		this.song=a;
@@ -84,7 +85,7 @@ public class SongEventHandler implements EventHandler<ActionEvent> {
 		else if (source.getText()=="7") {
 			song.setArtist("Michael Bublé");
 			song.setSongName("Feelin' Good");
-			song.setfileName("moo");
+			song.setfileName("FEELINGgood");
 			
 		}
 		
@@ -108,8 +109,15 @@ public class SongEventHandler implements EventHandler<ActionEvent> {
 			song.setfileName("BADGIRLFORU");
 			
 		}
+		
+		//set up the player to play
 		song.setM(song.createPlayer(song.getfileName()));
 		
+		
+		
+		
+			
+		}
 		
 		
 		
@@ -126,4 +134,3 @@ public class SongEventHandler implements EventHandler<ActionEvent> {
 	}
 
 
-}

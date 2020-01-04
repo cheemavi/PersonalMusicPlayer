@@ -53,6 +53,7 @@ public class Bottom  extends HBox {
 		mute.setOnAction(new muteHandler());
 		looping.setOnAction(new loopMHandler());
 		viewTunes.setOnAction(new PopUpHandler(new PopSongUp()));
+		idk.setOnAction(new playPopHandler(new playPop()));
 		
 		//spacing of Buttons
 		
@@ -72,7 +73,7 @@ public class Bottom  extends HBox {
 		Image songs =  new Image((new File("assets" + File.separator + "SONGLIST.png")).toURI().toString());
 		Image muteP =  new Image((new File("assets" + File.separator + "mute.png")).toURI().toString());
 		Image pauseP =  new Image((new File("assets" + File.separator + "pauseM.png")).toURI().toString());
-		Image PL =  new Image((new File("assets" + File.separator + "PLACEHOLDER.png")).toURI().toString());
+		Image PL =  new Image((new File("assets" + File.separator + "xtra.png")).toURI().toString());
 		Image playP =  new Image((new File("assets" + File.separator + "playM.png")).toURI().toString());
 		Image stopP =  new Image((new File("assets" + File.separator + "stopMusic.png")).toURI().toString());
 		Image volD =  new Image((new File("assets" + File.separator + "vd.png")).toURI().toString());

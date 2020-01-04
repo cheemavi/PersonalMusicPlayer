@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 public class musicApplication extends Application{
 	Top topBar;
 	Bottom bottomBar;
+	
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -34,14 +35,16 @@ public class musicApplication extends Application{
 		
 		
 		
-		//setting up top and bottom bars
+		//setting up top and bottom bars and the pop up for texts
 		topBar = new Top();
 		topBar.setPadding(new Insets(5,0,0,5));
 		bottomBar = new Bottom();
 		
 		
+		
 		// model to view attaching 
 		dF.attach(topBar);
+		
 		
 		
 		
